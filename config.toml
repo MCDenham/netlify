@@ -9,7 +9,7 @@
 baseurl = "/"
 
 # Title of your site
-title = "StdNormal"
+title = "Mike Denham"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
@@ -51,7 +51,7 @@ enableGitInfo = false
   # AUTHOR SETUP
 
   # Your details.
-  name = "StdNormal"
+  name = "Mike Denham"
   role = "Applied Statistician and Gamer"
 
   # Organizations/Affiliations.
@@ -62,7 +62,7 @@ enableGitInfo = false
   avatar = "GenkiToon.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
 
   # Details for the Contact Widget
-  email = "StdNormal@mcdck.co.uk"
+  email = "mike.denham@mdck.co.uk"
   address = ""
   office_hours = ""
   phone = ""
