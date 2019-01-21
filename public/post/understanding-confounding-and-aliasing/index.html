@@ -15,10 +15,10 @@
   
     
   
-  <meta name="description" content="We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone&#39;s GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results.">
+  <meta name="description" content="Statistical terminology can be confusing. The terms confounding and aliasing were introduced by different researchers at different times during the development of experimental design theory. The two terms were introduced in subtly different contexts. The term confounding was introduced in the late 1920s by Ronald Fisher in the context of blocking experiments. It was used to describe the situation of deliberately “confounding” effects due to differences in blocks with typically higher order interactions between experimental factors to keep the size of a block to a manageable number.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/publication/clothing-search/">
+  <link rel="alternate" hreflang="en-us" href="/post/understanding-confounding-and-aliasing/">
 
   
 
@@ -86,30 +86,30 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/publication/clothing-search/">
+  <link rel="canonical" href="/post/understanding-confounding-and-aliasing/">
 
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Mike Denham">
-  <meta property="og:url" content="/publication/clothing-search/">
-  <meta property="og:title" content="Mobile visual clothing search | Mike Denham">
-  <meta property="og:description" content="We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone&#39;s GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results.">
+  <meta property="og:url" content="/post/understanding-confounding-and-aliasing/">
+  <meta property="og:title" content="Understanding Confounding and Aliasing | Mike Denham">
+  <meta property="og:description" content="Statistical terminology can be confusing. The terms confounding and aliasing were introduced by different researchers at different times during the development of experimental design theory. The two terms were introduced in subtly different contexts. The term confounding was introduced in the late 1920s by Ronald Fisher in the context of blocking experiments. It was used to describe the situation of deliberately “confounding” effects due to differences in blocks with typically higher order interactions between experimental factors to keep the size of a block to a manageable number.">
   
   
     
-  <meta property="og:image" content="/img/headers/bubbles-wide.jpg">
+  <meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2013-07-01T00:00:00&#43;01:00">
+  <meta property="article:published_time" content="2018-11-09T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2013-07-01T00:00:00&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2018-11-09T00:00:00&#43;00:00">
   
 
   
 
-  <title>Mobile visual clothing search | Mike Denham</title>
+  
+
+  <title>Understanding Confounding and Aliasing | Mike Denham</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -278,65 +278,90 @@
   </div>
 </nav>
 
-<div class="pub" itemscope itemtype="http://schema.org/CreativeWork">
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
 
-
-<div class="article-header">
-  
-  
-    <img src="/img/headers/bubbles-wide.jpg" class="article-banner" itemprop="image">
-  
-
-  <span class="article-header-caption">My caption 😄</span>
-</div>
 
 
 
   <div class="article-container">
-    <h1 itemprop="name">Mobile visual clothing search</h1>
-    <span class="pub-authors" itemprop="author">
-      
-      GA Cushen, MS Nixon
-      
-    </span>
-    <span class="float-right">
-      
+    <h1 itemprop="name">Understanding Confounding and Aliasing</h1>
+
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mike Denham">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-11-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-11-09 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Nov 9, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mike Denham">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  
+
+  
+  
 <div class="share-box" aria-hidden="true">
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Mobile%20visual%20clothing%20search&amp;url=%2fpublication%2fclothing-search%2f"
+         href="https://twitter.com/intent/tweet?text=Understanding%20Confounding%20and%20Aliasing&amp;url=%2fpost%2funderstanding-confounding-and-aliasing%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2fpublication%2fclothing-search%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2funderstanding-confounding-and-aliasing%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpublication%2fclothing-search%2f&amp;title=Mobile%20visual%20clothing%20search"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2funderstanding-confounding-and-aliasing%2f&amp;title=Understanding%20Confounding%20and%20Aliasing"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpublication%2fclothing-search%2f&amp;title=Mobile%20visual%20clothing%20search"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2funderstanding-confounding-and-aliasing%2f&amp;title=Understanding%20Confounding%20and%20Aliasing"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Mobile%20visual%20clothing%20search&amp;body=%2fpublication%2fclothing-search%2f">
+         href="mailto:?subject=Understanding%20Confounding%20and%20Aliasing&amp;body=%2fpost%2funderstanding-confounding-and-aliasing%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -344,160 +369,45 @@
 </div>
 
 
-    </span>
-
-    
-
-    
-    <h3>Abstract</h3>
-    <p class="pub-abstract" itemprop="text">We present a mobile visual clothing search system whereby a smart phone user can either choose a social networking photo or take a new photo of a person wearing clothing of interest and search for similar clothing in a retail database. From the query image, the person is detected, clothing is segmented, and clothing features are extracted and quantized. The information is sent from the phone client to a server, where the feature vector of the query image is used to retrieve similar clothing products from online databases. The phone&rsquo;s GPS location is used to re-rank results by retail store location. State of the art work focuses primarily on the recognition of a diverse range of clothing offline and pays little attention to practical applications. Evaluated on a challenging dataset, the system is relatively fast and achieves promising results.</p>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
-          <div class="col-12 col-md-9">
-            
-            <a href="/publication/#1">
-              Conference paper
-            </a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">In <em>International Conference on Multimedia and Expo Workshops (ICMEW)</em>, IEEE.</div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9" itemprop="datePublished">
-            July, 2013
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-sm-none space-below"></div>
-
-    <div class="row" style="padding-top: 10px">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading" style="line-height:34px;">Links</div>
-          <div class="col-12 col-md-9">
-
-            
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="http://eprints.soton.ac.uk/352095/1/Cushen-IMV2013.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
-
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/files/citations/clothing-search.bib">
-  Cite
-</button>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Dataset
-</a>
-
-
-
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="/project/example-external-project/">
-    Project
-  </a>
   
 
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Poster
-</a>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Video
-</a>
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/#" target="_blank" rel="noopener">
-  Source Document
-</a>
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="http://example.org" target="_blank" rel="noopener">
-  Custom Link
-</a>
-
-
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-sm-none space-below"></div>
-
-    <div class="space-below"></div>
-
-    <div class="article-style"><p>More detail can easily be written here using <em>Markdown</em> and $\rm \LaTeX$ math code.</p>
 </div>
 
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Statistical terminology can be confusing. The terms confounding and aliasing were introduced by different researchers at different times during the development of experimental design theory. The two terms were introduced in subtly different contexts. The term confounding was introduced in the late 1920s by Ronald Fisher in the context of blocking experiments. It was used to describe the situation of deliberately “confounding” effects due to differences in blocks with typically higher order interactions between experimental factors to keep the size of a block to a manageable number. Later on, in the 1940s when fractional factorial designs were introduced by Finney, the term “aliasing” was used to describe the situation when two different factorial effects (such as two separate two-way interactions) could not be estimated separately from one another using the observed results from the experiment. There is little practical difference between these two situations and over time it has become widespread practice for the two terms to be used interchangeably. We will use the term “aliasing” throughout this discussion.</p>
+<p>Two effects are aliased if their estimates are correlated with each other^<sup>1</sup>^. In the extreme case of perfect correlation (±1) it becomes mathematically impossible to discern the impact of one effect from the other using the data from the experiment. Fractional factorial designs do this on purpose. They lead to designs in which pairs of effects are either completely aliased (i.e. the estimates are perfectly correlated) or they are not aliased at all (i.e. the estimates have a correlation of zero). For instance, resolution IV fractional factorials have the property that estimates of main effects are uncorrelated with those of any other main effects or two-factor interactions. At the same time estimates of two-factor interactions will be perfectly correlated with estimates for some other two-factor interactions and uncorrelated with others. Prior information about what are likely to be the important effects can sometimes be used to choose designs where potentially important effects are only aliased with effects which are scientifically unlikely to exist. This reliance on both the observed data and our prior knowledge allows us to obtain the required information using fewer experimental resources. Fractional factorial designs have the desirable feature that they lead to a clear distinction of when estimated effects are unaffected by the size of other effects and when they are not.</p>
+<p>It is also possible to create designs in which estimates of effects are correlated but not perfectly so. These designs allow us to mathematically tease out separate effects because their estimates are not perfectly correlated. Such effects are sometimes referred to as partially aliased. This can lead to misunderstandings when reading the literature; some authors use aliasing or confounding when they really mean complete aliasing. In our view, aliasing can refer to either complete or partial aliasing. The phrase “not completely aliased” (or equivalently not completely confounded) does not mean “not aliased” (or not confounded). Definitive Screening Designs are an example of a class of experimental designs which have partial aliasing. In these designs, main effects estimates are not aliased with each other or with any two-factors interactions or quadratic effects. At the same time, two-factor interactions and quadratic effect estimates are partially aliased with each other. This partial aliasing makes interpretation of the uncertainty associated with effect estimates much more difficult. It also makes choosing an appropriate model more difficult. Even though pairs of effects may not be perfectly correlated with each other, it can still be mathematically impossible to distinguish between the overall impact of two different sets of effects.</p>
+<hr>
+<p>^<sup>1</sup>^This isn’t entirely true. I guess strictly speaking the two effects are aliased if the associated columns of the design matrix are not orthogonal. When we have two columns that are linearly dependent, we generally include one effect and not the other. The estimated effect is then biased. (We do not have an estimator for the other term, so we cannot talk about the correlation between them.) When we have partial aliasing and we fit both terms we have correlation but no bias due to the partially aliased effect.</p>
+<p>One could think of this as dividing the design matrix into separate sub-matrices where <span class="math display">\[X_1\]</span> represents effects included in the model and <span class="math display">\[X_2\]</span> represents terms effects not included in the model. Note <span class="math display">\[X_2\]</span> can include any effect included in the model. These can be explicitly omitted effects as higher order terms not explicitly considered or even effects associated with unknown process factors.</p>
+<p>@<span class="citation">@display:block</span>;text-align:center;<span class="math display">\[y = X_1{\vec\beta_1} + X_2\vec\beta_2 + \epsilon\]</span>@@</p>
+<p>We estimate <span class="math display">\[\vec\beta_1\]</span> as <span class="math display">\[\hat \beta_1 = \left(X_1^TX_1\right)^{-1}X_1^Ty\]</span>, so that</p>
+<p>@<span class="citation">@display:block</span>;text-align:center; <span class="math display">\[E\left[\hat \beta_1\right] = \vec\beta_1 + \left(X_1^TX_1\right)^{-1}X_1^TX_2\vec\beta_2\]</span>@@
+and
+@<span class="citation">@display:block</span>;text-align:center; <span class="math display">\[V\left[\hat \beta_1\right] = \left(X_1^TX_1\right)^{-1}\sigma^2.\]</span>@@</p>
+<p>If <span class="math display">\[X_1^TX_2 = 0\]</span> then <span class="math display">\[\hat\beta_1\]</span> is an unbiased estimate regardless of the values of <span class="math display">\[\vec\beta_2\]</span>.</p>
+<p>If <span class="math display">\[X_1^TX_2 \ne 0\]</span> then <span class="math display">\[\hat \beta_1\]</span> is a biased estimate unless <span class="math display">\[\vec\beta_2 = \vec0.\]</span></p>
+<p>For the <span class="math display">\[j\]</span>th coefficient in <span class="math display">\[\hat \beta_1\]</span> (i.e. <span class="math display">\[\beta_{1j}\]</span>) to be unbiased for the corresponding coefficient in <span class="math display">\[\vec\beta_1\]</span>, for each value of <span class="math display">\[k\]</span>, one or other of <span class="math display">\[\left[\left(X_1^TX_1\right)^{-1}X_1^TX_2\right]_{jk} \]</span> and <span class="math display">\[\beta_{2k}\]</span> must be equal to zero.</p>
+
+    </div>
+
     
 
 
 
+
+
+    
+    
+
+    
+
+    
 
 
   </div>
-</div>
-
-
+</article>
 
 <div class="container">
   <footer class="site-footer">

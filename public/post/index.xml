@@ -13,26 +13,22 @@
     
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
+      <title>Understanding Confounding and Aliasing</title>
+      <link>/post/understanding-confounding-and-aliasing/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/getting-started/</guid>
-      <description>Academic is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. Check out the latest demo of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the Quick Start guide or take a look at the Release Notes.
-
-Key features:
- Easily manage various content including homepage, blog posts, publications, talks, and projects Extensible via color themes and widgets/plugins Write in Markdown for easy formatting and code highlighting, with LaTeX for mathematical expressions Social/academic network linking, Google Analytics, and Disqus comments Responsive and mobile friendly Simple and refreshing one page design Multilingual and easy to customize  Color Themes Academic is available in different color themes and font themes.</description>
+      <guid>/post/understanding-confounding-and-aliasing/</guid>
+      <description>Statistical terminology can be confusing. The terms confounding and aliasing were introduced by different researchers at different times during the development of experimental design theory. The two terms were introduced in subtly different contexts. The term confounding was introduced in the late 1920s by Ronald Fisher in the context of blocking experiments. It was used to describe the situation of deliberately “confounding” effects due to differences in blocks with typically higher order interactions between experimental factors to keep the size of a block to a manageable number.</description>
     </item>
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Understanding marginality and effect hierarchy, sparsity &amp; heredity</title>
+      <link>/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/</guid>
+      <description>Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.
+To illustrate let’s temporarily imagine a world with no statistical error.</description>
     </item>
     
   </channel>

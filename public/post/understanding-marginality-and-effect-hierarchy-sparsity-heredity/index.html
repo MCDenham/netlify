@@ -15,12 +15,11 @@
   
     
   
-  <meta name="description" content="Click on the Slides button above to view the built-in slides feature.
-Slides can be added in a few ways:
- Create slides using Academic&rsquo;s Slides feature and link using url_slides parameter in the front matter of the talk file Upload an existing slide deck to static/ and link using url_slides parameter in the front matter of the talk file Embed your slides (e.g. Google Slides) or presentation video on this page using shortcodes.">
+  <meta name="description" content="Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.
+To illustrate let’s temporarily imagine a world with no statistical error.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/talk/example-talk/">
+  <link rel="alternate" hreflang="en-us" href="/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/">
 
   
 
@@ -88,32 +87,31 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/talk/example-talk/">
+  <link rel="canonical" href="/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/">
 
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Mike Denham">
-  <meta property="og:url" content="/talk/example-talk/">
-  <meta property="og:title" content="Example Talk | Mike Denham">
-  <meta property="og:description" content="Click on the Slides button above to view the built-in slides feature.
-Slides can be added in a few ways:
- Create slides using Academic&rsquo;s Slides feature and link using url_slides parameter in the front matter of the talk file Upload an existing slide deck to static/ and link using url_slides parameter in the front matter of the talk file Embed your slides (e.g. Google Slides) or presentation video on this page using shortcodes.">
+  <meta property="og:url" content="/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/">
+  <meta property="og:title" content="Understanding marginality and effect hierarchy, sparsity &amp; heredity | Mike Denham">
+  <meta property="og:description" content="Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.
+To illustrate let’s temporarily imagine a world with no statistical error.">
   
   
     
-  <meta property="og:image" content="/img/headers/bubbles-wide.jpg">
+  <meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2017-01-01T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-11-09T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2017-01-01T00:00:00&#43;00:00">
-  
-
+  <meta property="article:modified_time" content="2018-11-09T00:00:00&#43;00:00">
   
 
   
 
-  <title>Example Talk | Mike Denham</title>
+  
+
+  <title>Understanding marginality and effect hierarchy, sparsity &amp; heredity | Mike Denham</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -282,65 +280,90 @@
   </div>
 </nav>
 
-<div class="pub" itemscope itemtype="http://schema.org/Event">
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
 
   
 
 
-
-<div class="article-header">
-  
-  
-    <img src="/img/headers/bubbles-wide.jpg" class="article-banner" itemprop="image">
-  
-
-  <span class="article-header-caption">My caption 😄</span>
-</div>
 
 
 
   <div class="article-container">
+    <h1 itemprop="name">Understanding marginality and effect hierarchy, sparsity &amp; heredity</h1>
 
-    <div class="pub-title">
-      <h1 itemprop="name">Example Talk</h1>
-      <span class="pub-authors" itemprop="author">
-        
-      </span>
-      <span class="float-right">
-        
+    
+
+<div class="article-metadata">
+
+  
+  
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mike Denham">
+  </span>
+  
+
+  <span class="article-date">
+    
+    <meta content="2018-11-09 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-11-09 00:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Nov 9, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mike Denham">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
+  
+
+  
+  
+
+  
+  
+  
+  
+
+  
+  
 <div class="share-box" aria-hidden="true">
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Example%20Talk&amp;url=%2ftalk%2fexample-talk%2f"
+         href="https://twitter.com/intent/tweet?text=Understanding%20marginality%20and%20effect%20hierarchy%2c%20sparsity%20%26%20heredity&amp;url=%2fpost%2funderstanding-marginality-and-effect-hierarchy-sparsity-heredity%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=%2ftalk%2fexample-talk%2f"
+         href="https://www.facebook.com/sharer.php?u=%2fpost%2funderstanding-marginality-and-effect-hierarchy-sparsity-heredity%2f"
          target="_blank" rel="noopener">
         <i class="fab fa-facebook-f"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2ftalk%2fexample-talk%2f&amp;title=Example%20Talk"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2funderstanding-marginality-and-effect-hierarchy-sparsity-heredity%2f&amp;title=Understanding%20marginality%20and%20effect%20hierarchy%2c%20sparsity%20%26%20heredity"
          target="_blank" rel="noopener">
         <i class="fab fa-linkedin-in"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2ftalk%2fexample-talk%2f&amp;title=Example%20Talk"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2funderstanding-marginality-and-effect-hierarchy-sparsity-heredity%2f&amp;title=Understanding%20marginality%20and%20effect%20hierarchy%2c%20sparsity%20%26%20heredity"
          target="_blank" rel="noopener">
         <i class="fab fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Example%20Talk&amp;body=%2ftalk%2fexample-talk%2f">
+         href="mailto:?subject=Understanding%20marginality%20and%20effect%20hierarchy%2c%20sparsity%20%26%20heredity&amp;body=%2fpost%2funderstanding-marginality-and-effect-hierarchy-sparsity-heredity%2f">
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -348,121 +371,25 @@
 </div>
 
 
-      </span>
-    </div>
-
-    
-      <br>
-    
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9" itemprop="datePublished">
-            
-            Jun 1, 2030
-            <div class="talk-time">
-              
-                1:00 PM
-                
-                  &mdash; 3:00 PM
-                
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Event</div>
-          <div class="col-12 col-md-9">
-            <a href="https://example.org" target="_blank" rel="noopener">
-            Academic Theme Conference
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Location</div>
-          <div class="col-12 col-md-9">London, United Kingdom</div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row" style="padding-top: 10px">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading" style="line-height:34px;">Links</div>
-          <div class="col-12 col-md-9">
-
-            
-
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="/slides/example-slides" target="_blank">
-  Slides
-</a>
-
-
-
-
   
-  <a class="btn btn-outline-primary my-1 mr-1" href="/project/deep-learning/">
-    Project
-  </a>
-  
-
-
-
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="space-below"></div>
-
-    <div class="article-style">
-      <div class="alert alert-note">
-  <p>Click on the <strong>Slides</strong> button above to view the built-in slides feature.</p>
 
 </div>
 
 
-<p>Slides can be added in a few ways:</p>
-
-<ul>
-<li><strong>Create</strong> slides using Academic&rsquo;s <em>Slides</em> feature and link using <code>url_slides</code> parameter in the front matter of the talk file</li>
-<li><strong>Upload</strong> an existing slide deck to <code>static/</code> and link using <code>url_slides</code> parameter in the front matter of the talk file</li>
-<li><strong>Embed</strong> your slides (e.g. Google Slides) or presentation video on this page using <a href="https://sourcethemes.com/academic/docs/writing-markdown-latex/" target="_blank">shortcodes</a>.</li>
-</ul>
-
-<p>Further talk details can easily be added to this page using <em>Markdown</em> and $\rm \LaTeX$ math code.</p>
+    <div class="article-style" itemprop="articleBody">
+      <p>Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.
+~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.</p>
+<p>To illustrate let’s temporarily imagine a world with no statistical error. We have a response variable <span class="math display">\[y\]</span> whose value can be determined from the value of a single explanatory variable <span class="math display">\[x\]</span> through a functional relationship <span class="math display">\[y=f(x)\]</span>. Let us suppose that this function <span class="math display">\[f(x)\]</span> is continuous and differentiable but not necessarily polynomial. We can express <span class="math display">\[f(x)\]</span> using an infinite Taylor series expansion about an arbitrary point <span class="math display">\[x_0\]</span>.</p>
+<p>@<span class="citation">@display:block</span>;text-align:center;<span class="math display">\[y = f(x_0) +  \left.{df(x)\over dx}\right|_{x_0} \times (x-x_0) +  {1\over 2!} \left.d^2 f(x)\over dx^2\right|_{x_0}\times(x-x_0)^2 + \ldots \]</span>@@</p>
+<p>We can create approximations of <span class="math display">\[f(x)\]</span> using finite Taylor series expansions. For example, a quadratic polynomial approximation would use</p>
+<p>@<span class="citation">@display:block</span>;text-align:center;<span class="math display">\[y= a_0  + b_0 \times (x-x_0) + c_0 \times (x-x_0)^2\]</span>@@</p>
+<p>with <span class="math display">\[a_0=f(x_0 )\]</span>; <span class="math display">\[b_0= {df(x)\over dx}|_{x_0}\]</span>; <span class="math display">\[c_0={1\over 2!} {d^2 f(x)\over dx^2}|_{x_0}\]</span>.</p>
+<p>Now let’s suppose we have a pure quadratic relationship, <span class="math display">\[y =\alpha +\gamma x^2\]</span>. In our Taylor series expansion, we have <span class="math display">\[a_0  =\alpha +\gamma x_0^2\]</span>, <span class="math display">\[b_0  =\gamma x_0\]</span> and <span class="math display">\[c_0  =\gamma\]</span>. Assuming <span class="math display">\[\gamma \ne 0\]</span>, then the linear term is only zero when we choose <span class="math display">\[x_0\]</span> to be zero. In other words if we shift the “origin” of the <span class="math display">\[x\]</span> variable the relationship ceases to be a purely quadratic one. Since for most covariates the definition of what constitutes “zero” is arbitrary, it does not make any sense to omit the linear term when fitting the quadratic. I believe, this is what ~McCullagh and Nelder mean when they refer to marginality. Note that this interpretation has absolutely nothing to do with the statistical significance of the terms or their magnitude, it is about preserving the behaviour of the implied model under changes of location and scale in the covariate.</p>
+<p>A similar argument can be applied in the context of factorial models and effects. The principle of marginality drives a requirement to include relevant lower order terms when fitting higher order terms. Except in rare circumstances where the “zero” setting of a factor is not arbitrary, fitting a two-factor interaction requires the inclusion of the corresponding main effects to preserve the behaviour of the model in changes of location. Similarly, modelling three-factor interactions requires the inclusion of the relevant set of two-factor interactions and main effects. Again, this principle has nothing to do with believing the significance or magnitude of effects decreases with increasing order. [I’ve omitted the mathematical expressions for now, but who knows, I might put them in at some point - MCD]</p>
+<p>A hierarchical model is one which obeys the principle of marginality. When you only select BF and F terms in a half normal plot using DX10, DX10 issues a warning to say the model you have selected is not hierarchical. It does not provide a warning if you select, F and BF terms if the magnitude of the estimated BF effect is bigger than the estimated main effects for B and F.</p>
+<p>On the other hand, the terms effect hierarchy, effect sparsity and effect heredity popularised by Hamada and Wu relate to the relative importance of effects and the abundance of relatively important effects. The idea of effect hierarchy is that lower order effects are more likely to be important than higher order effects and that effects of the same order are equally likely to be important. The idea of effect sparsity is essentially a restatement of the Pareto Principle in the context of experimental design. It posits that the number of relatively important effects in an experiment is small. Finally effect heredity is more of a model fitting principle where a higher order effect can only be deemed significant if the relevant lower order effects are also significant. Particularly in the context of two-factor interactions, this is sometimes referred to as the strong heredity principle to distinguish it from a relaxed version known as weak heredity where a two-factor interaction can be deemed significant if only one of the relevant main effects is significant.</p>
+<p>I am not clear whether significant is being used to mean practically important or whether it is being used to mean statistically significant. It seems to me that Hamada and Wu interpret it both ways as it suits them. Hamada and Wu use the principles to motivate a proposed model selection strategy based on forward selection. Forward selection has some well-known difficulties associated with adding terms one at a time and only if they are statistically significant at a threshold level. These difficulties are perhaps the motivation for the concept of effect heredity based on statistical significance as it can then be used as a justification for the forward selection strategy.</p>
+<p>I would argue that except in rare circumstances chosen models should obey M&amp;Ns marginality principle. Best possible subsets approaches using criteria such as AICc where the subset models considered obey the marginality principle combined with subject matter knowledge would seem to me to be far better approaches than relying on H&amp;W’s effect heredity and forward selection.</p>
 
     </div>
 
@@ -470,12 +397,18 @@
 
 
 
+
+
+    
+    
+
+    
+
+    
 
 
   </div>
-</div>
-
-
+</article>
 
 <div class="container">
   <footer class="site-footer">

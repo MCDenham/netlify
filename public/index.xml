@@ -11,6 +11,51 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Understanding Confounding and Aliasing</title>
+      <link>/post/understanding-confounding-and-aliasing/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/understanding-confounding-and-aliasing/</guid>
+      <description>&lt;p&gt;Statistical terminology can be confusing. The terms confounding and aliasing were introduced by different researchers at different times during the development of experimental design theory. The two terms were introduced in subtly different contexts. The term confounding was introduced in the late 1920s by Ronald Fisher in the context of blocking experiments. It was used to describe the situation of deliberately “confounding” effects due to differences in blocks with typically higher order interactions between experimental factors to keep the size of a block to a manageable number. Later on, in the 1940s when fractional factorial designs were introduced by Finney, the term “aliasing” was used to describe the situation when two different factorial effects (such as two separate two-way interactions) could not be estimated separately from one another using the observed results from the experiment. There is little practical difference between these two situations and over time it has become widespread practice for the two terms to be used interchangeably. We will use the term “aliasing” throughout this discussion.&lt;/p&gt;
+&lt;p&gt;Two effects are aliased if their estimates are correlated with each other^&lt;sup&gt;1&lt;/sup&gt;^. In the extreme case of perfect correlation (±1) it becomes mathematically impossible to discern the impact of one effect from the other using the data from the experiment. Fractional factorial designs do this on purpose. They lead to designs in which pairs of effects are either completely aliased (i.e. the estimates are perfectly correlated) or they are not aliased at all (i.e. the estimates have a correlation of zero). For instance, resolution IV fractional factorials have the property that estimates of main effects are uncorrelated with those of any other main effects or two-factor interactions. At the same time estimates of two-factor interactions will be perfectly correlated with estimates for some other two-factor interactions and uncorrelated with others. Prior information about what are likely to be the important effects can sometimes be used to choose designs where potentially important effects are only aliased with effects which are scientifically unlikely to exist. This reliance on both the observed data and our prior knowledge allows us to obtain the required information using fewer experimental resources. Fractional factorial designs have the desirable feature that they lead to a clear distinction of when estimated effects are unaffected by the size of other effects and when they are not.&lt;/p&gt;
+&lt;p&gt;It is also possible to create designs in which estimates of effects are correlated but not perfectly so. These designs allow us to mathematically tease out separate effects because their estimates are not perfectly correlated. Such effects are sometimes referred to as partially aliased. This can lead to misunderstandings when reading the literature; some authors use aliasing or confounding when they really mean complete aliasing. In our view, aliasing can refer to either complete or partial aliasing. The phrase “not completely aliased” (or equivalently not completely confounded) does not mean “not aliased” (or not confounded). Definitive Screening Designs are an example of a class of experimental designs which have partial aliasing. In these designs, main effects estimates are not aliased with each other or with any two-factors interactions or quadratic effects. At the same time, two-factor interactions and quadratic effect estimates are partially aliased with each other. This partial aliasing makes interpretation of the uncertainty associated with effect estimates much more difficult. It also makes choosing an appropriate model more difficult. Even though pairs of effects may not be perfectly correlated with each other, it can still be mathematically impossible to distinguish between the overall impact of two different sets of effects.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;^&lt;sup&gt;1&lt;/sup&gt;^This isn’t entirely true. I guess strictly speaking the two effects are aliased if the associated columns of the design matrix are not orthogonal. When we have two columns that are linearly dependent, we generally include one effect and not the other. The estimated effect is then biased. (We do not have an estimator for the other term, so we cannot talk about the correlation between them.) When we have partial aliasing and we fit both terms we have correlation but no bias due to the partially aliased effect.&lt;/p&gt;
+&lt;p&gt;One could think of this as dividing the design matrix into separate sub-matrices where &lt;span class=&#34;math display&#34;&gt;\[X_1\]&lt;/span&gt; represents effects included in the model and &lt;span class=&#34;math display&#34;&gt;\[X_2\]&lt;/span&gt; represents terms effects not included in the model. Note &lt;span class=&#34;math display&#34;&gt;\[X_2\]&lt;/span&gt; can include any effect included in the model. These can be explicitly omitted effects as higher order terms not explicitly considered or even effects associated with unknown process factors.&lt;/p&gt;
+&lt;p&gt;@&lt;span class=&#34;citation&#34;&gt;@display:block&lt;/span&gt;;text-align:center;&lt;span class=&#34;math display&#34;&gt;\[y = X_1{\vec\beta_1} + X_2\vec\beta_2 + \epsilon\]&lt;/span&gt;@@&lt;/p&gt;
+&lt;p&gt;We estimate &lt;span class=&#34;math display&#34;&gt;\[\vec\beta_1\]&lt;/span&gt; as &lt;span class=&#34;math display&#34;&gt;\[\hat \beta_1 = \left(X_1^TX_1\right)^{-1}X_1^Ty\]&lt;/span&gt;, so that&lt;/p&gt;
+&lt;p&gt;@&lt;span class=&#34;citation&#34;&gt;@display:block&lt;/span&gt;;text-align:center; &lt;span class=&#34;math display&#34;&gt;\[E\left[\hat \beta_1\right] = \vec\beta_1 + \left(X_1^TX_1\right)^{-1}X_1^TX_2\vec\beta_2\]&lt;/span&gt;@@
+and
+@&lt;span class=&#34;citation&#34;&gt;@display:block&lt;/span&gt;;text-align:center; &lt;span class=&#34;math display&#34;&gt;\[V\left[\hat \beta_1\right] = \left(X_1^TX_1\right)^{-1}\sigma^2.\]&lt;/span&gt;@@&lt;/p&gt;
+&lt;p&gt;If &lt;span class=&#34;math display&#34;&gt;\[X_1^TX_2 = 0\]&lt;/span&gt; then &lt;span class=&#34;math display&#34;&gt;\[\hat\beta_1\]&lt;/span&gt; is an unbiased estimate regardless of the values of &lt;span class=&#34;math display&#34;&gt;\[\vec\beta_2\]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;span class=&#34;math display&#34;&gt;\[X_1^TX_2 \ne 0\]&lt;/span&gt; then &lt;span class=&#34;math display&#34;&gt;\[\hat \beta_1\]&lt;/span&gt; is a biased estimate unless &lt;span class=&#34;math display&#34;&gt;\[\vec\beta_2 = \vec0.\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;For the &lt;span class=&#34;math display&#34;&gt;\[j\]&lt;/span&gt;th coefficient in &lt;span class=&#34;math display&#34;&gt;\[\hat \beta_1\]&lt;/span&gt; (i.e. &lt;span class=&#34;math display&#34;&gt;\[\beta_{1j}\]&lt;/span&gt;) to be unbiased for the corresponding coefficient in &lt;span class=&#34;math display&#34;&gt;\[\vec\beta_1\]&lt;/span&gt;, for each value of &lt;span class=&#34;math display&#34;&gt;\[k\]&lt;/span&gt;, one or other of &lt;span class=&#34;math display&#34;&gt;\[\left[\left(X_1^TX_1\right)^{-1}X_1^TX_2\right]_{jk} \]&lt;/span&gt; and &lt;span class=&#34;math display&#34;&gt;\[\beta_{2k}\]&lt;/span&gt; must be equal to zero.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Understanding marginality and effect hierarchy, sparsity &amp; heredity</title>
+      <link>/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/</link>
+      <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/</guid>
+      <description>&lt;p&gt;Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.
+~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.&lt;/p&gt;
+&lt;p&gt;To illustrate let’s temporarily imagine a world with no statistical error. We have a response variable &lt;span class=&#34;math display&#34;&gt;\[y\]&lt;/span&gt; whose value can be determined from the value of a single explanatory variable &lt;span class=&#34;math display&#34;&gt;\[x\]&lt;/span&gt; through a functional relationship &lt;span class=&#34;math display&#34;&gt;\[y=f(x)\]&lt;/span&gt;. Let us suppose that this function &lt;span class=&#34;math display&#34;&gt;\[f(x)\]&lt;/span&gt; is continuous and differentiable but not necessarily polynomial. We can express &lt;span class=&#34;math display&#34;&gt;\[f(x)\]&lt;/span&gt; using an infinite Taylor series expansion about an arbitrary point &lt;span class=&#34;math display&#34;&gt;\[x_0\]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;@&lt;span class=&#34;citation&#34;&gt;@display:block&lt;/span&gt;;text-align:center;&lt;span class=&#34;math display&#34;&gt;\[y = f(x_0) +  \left.{df(x)\over dx}\right|_{x_0} \times (x-x_0) +  {1\over 2!} \left.d^2 f(x)\over dx^2\right|_{x_0}\times(x-x_0)^2 + \ldots \]&lt;/span&gt;@@&lt;/p&gt;
+&lt;p&gt;We can create approximations of &lt;span class=&#34;math display&#34;&gt;\[f(x)\]&lt;/span&gt; using finite Taylor series expansions. For example, a quadratic polynomial approximation would use&lt;/p&gt;
+&lt;p&gt;@&lt;span class=&#34;citation&#34;&gt;@display:block&lt;/span&gt;;text-align:center;&lt;span class=&#34;math display&#34;&gt;\[y= a_0  + b_0 \times (x-x_0) + c_0 \times (x-x_0)^2\]&lt;/span&gt;@@&lt;/p&gt;
+&lt;p&gt;with &lt;span class=&#34;math display&#34;&gt;\[a_0=f(x_0 )\]&lt;/span&gt;; &lt;span class=&#34;math display&#34;&gt;\[b_0= {df(x)\over dx}|_{x_0}\]&lt;/span&gt;; &lt;span class=&#34;math display&#34;&gt;\[c_0={1\over 2!} {d^2 f(x)\over dx^2}|_{x_0}\]&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Now let’s suppose we have a pure quadratic relationship, &lt;span class=&#34;math display&#34;&gt;\[y =\alpha +\gamma x^2\]&lt;/span&gt;. In our Taylor series expansion, we have &lt;span class=&#34;math display&#34;&gt;\[a_0  =\alpha +\gamma x_0^2\]&lt;/span&gt;, &lt;span class=&#34;math display&#34;&gt;\[b_0  =\gamma x_0\]&lt;/span&gt; and &lt;span class=&#34;math display&#34;&gt;\[c_0  =\gamma\]&lt;/span&gt;. Assuming &lt;span class=&#34;math display&#34;&gt;\[\gamma \ne 0\]&lt;/span&gt;, then the linear term is only zero when we choose &lt;span class=&#34;math display&#34;&gt;\[x_0\]&lt;/span&gt; to be zero. In other words if we shift the “origin” of the &lt;span class=&#34;math display&#34;&gt;\[x\]&lt;/span&gt; variable the relationship ceases to be a purely quadratic one. Since for most covariates the definition of what constitutes “zero” is arbitrary, it does not make any sense to omit the linear term when fitting the quadratic. I believe, this is what ~McCullagh and Nelder mean when they refer to marginality. Note that this interpretation has absolutely nothing to do with the statistical significance of the terms or their magnitude, it is about preserving the behaviour of the implied model under changes of location and scale in the covariate.&lt;/p&gt;
+&lt;p&gt;A similar argument can be applied in the context of factorial models and effects. The principle of marginality drives a requirement to include relevant lower order terms when fitting higher order terms. Except in rare circumstances where the “zero” setting of a factor is not arbitrary, fitting a two-factor interaction requires the inclusion of the corresponding main effects to preserve the behaviour of the model in changes of location. Similarly, modelling three-factor interactions requires the inclusion of the relevant set of two-factor interactions and main effects. Again, this principle has nothing to do with believing the significance or magnitude of effects decreases with increasing order. [I’ve omitted the mathematical expressions for now, but who knows, I might put them in at some point - MCD]&lt;/p&gt;
+&lt;p&gt;A hierarchical model is one which obeys the principle of marginality. When you only select BF and F terms in a half normal plot using DX10, DX10 issues a warning to say the model you have selected is not hierarchical. It does not provide a warning if you select, F and BF terms if the magnitude of the estimated BF effect is bigger than the estimated main effects for B and F.&lt;/p&gt;
+&lt;p&gt;On the other hand, the terms effect hierarchy, effect sparsity and effect heredity popularised by Hamada and Wu relate to the relative importance of effects and the abundance of relatively important effects. The idea of effect hierarchy is that lower order effects are more likely to be important than higher order effects and that effects of the same order are equally likely to be important. The idea of effect sparsity is essentially a restatement of the Pareto Principle in the context of experimental design. It posits that the number of relatively important effects in an experiment is small. Finally effect heredity is more of a model fitting principle where a higher order effect can only be deemed significant if the relevant lower order effects are also significant. Particularly in the context of two-factor interactions, this is sometimes referred to as the strong heredity principle to distinguish it from a relaxed version known as weak heredity where a two-factor interaction can be deemed significant if only one of the relevant main effects is significant.&lt;/p&gt;
+&lt;p&gt;I am not clear whether significant is being used to mean practically important or whether it is being used to mean statistically significant. It seems to me that Hamada and Wu interpret it both ways as it suits them. Hamada and Wu use the principles to motivate a proposed model selection strategy based on forward selection. Forward selection has some well-known difficulties associated with adding terms one at a time and only if they are statistically significant at a threshold level. These difficulties are perhaps the motivation for the concept of effect heredity based on statistical significance as it can then be used as a justification for the forward selection strategy.&lt;/p&gt;
+&lt;p&gt;I would argue that except in rare circumstances chosen models should obey M&amp;amp;Ns marginality principle. Best possible subsets approaches using criteria such as AICc where the subset models considered obey the marginality principle combined with subject matter knowledge would seem to me to be far better approaches than relying on H&amp;amp;W’s effect heredity and forward selection.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Example Page</title>
       <link>/documents/example/</link>
       <pubDate>Sun, 09 Sep 2018 00:00:00 +0100</pubDate>
@@ -47,16 +92,6 @@
 &lt;h2 id=&#34;tip-2&#34;&gt;Tip 2&lt;/h2&gt;
 
 &lt;p&gt;&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      
-      <guid>/privacy/</guid>
-      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     
@@ -112,248 +147,12 @@
     </item>
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0100</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Ocean&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Dark&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Coffee theme with Playfair font&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;1950s&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-  &lt;/a&gt;
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
       <link>/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0100</pubDate>
       
       <guid>/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     
