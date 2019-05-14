@@ -240,7 +240,7 @@ enableGitInfo = false
   [[params.social]]
     icon = "envelope"
     icon_pack = "fas"
-    link = "mailto:StdNormal@mdck.co.uk"
+    link = "mailto:mike.denham@mdck.co.uk"
 
 
   [[params.social]]
@@ -278,20 +278,20 @@ enableGitInfo = false
   url = "/documents/"
   weight = 2
 
-[[menu.main]]
-  name = "Publications"
-  url = "#publications_selected"
-  weight = 3
+#[[menu.main]]
+#  name = "Publications"
+#  url = "#publications_selected"
+#  weight = 3
 
 [[menu.main]]
   name = "Posts"
   url = "#posts"
   weight = 4
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 5
+#[[menu.main]]
+#  name = "Projects"
+#  url = "#projects"
+#  weight = 5
 
 [[menu.main]]
   name = "Tutorials"
