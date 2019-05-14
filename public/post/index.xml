@@ -27,7 +27,7 @@
       <pubDate>Fri, 09 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/understanding-marginality-and-effect-hierarchy-sparsity-heredity/</guid>
-      <description>Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.~McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.
+      <description>Did I mention that statistical terminology can be confusing? This is another set of terms that seem to get used somewhat interchangeably. Again I believe there are some subtle (and this time important) differences in their meaning and implications.McCullagh and Nelder used the term “marginality” in their seminal work on generalised linear models. Their idea has its roots in Taylor series expansions.
 To illustrate let’s temporarily imagine a world with no statistical error.</description>
     </item>
     
